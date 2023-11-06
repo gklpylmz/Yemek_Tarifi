@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="kullanici.Master.cs" Inherits="Yemek_Tarifi.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+            <div style="width: 900px; height: 150px; margin: auto; background-color: antiquewhite;">
+            </div>
+
+            <div style="width: 900px; height: 30px; margin: auto; background-color: #ffffff;">
+            </div>
+
+            <div class="menu">
+                <table class="menu-table">
+                    <tr>
+                        <td class="menu-td" ><a href="AnaSayfa.aspx"  >ANA SAYFA</a></td>
+                        <td class="menu-td"><a href="GununYemegi.aspx" ><span >GÜNÜN YEMEĞİ</span></a></td>
+                        <td class="menu-td"><a href="TarifOner.aspx" ><span >TARİF ÖNERİSİ</span></a></td>
+                        <td class="menu-td"><a href="Hakkimizda.aspx" ><span >HAKKIMIZDA</span></a></td>
+                        <td class="menu-td"><a href="iletisim.aspx" ><span >İLETİŞİM</span></a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="width: 900px; height: 30px; margin: auto; background-color: #ffffff;">
+            </div>
+
+
+            <div style="width: 900px; height: 700px; margin: auto;">
+                <div style="width: 250px; height: auto; float: left; background-color: antiquewhite;text-align:center">
+                    <h2>KATEGORİLER</h2>
+&nbsp;<br />
+                    <br />
+                    <asp:DataList ID="DataList1" runat="server" Width="137px">
+                        <ItemTemplate>
+                            <div style="border-style:solid; border-color:wheat; margin:10px;text-align:left;width:220px;">
+                                <a href="kategoriDetay.aspx?kategoriID=<%#Eval("kategoriID") %>">
+                                <asp:Label ID="Label1" runat="server" BorderColor="White" Text='<%# Eval("kategoriAd") %>'></asp:Label>
+                                &nbsp;-&nbsp;&nbsp;
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("kategoriAdet") %>'></asp:Label>
+                                    </a>
+                            </div>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </div>
+
+                <div style="width: 550px; height: auto; margin-left: 350px; background-color: antiquewhite;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </form>
+</body>
+</html>
